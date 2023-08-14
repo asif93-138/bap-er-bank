@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bap er Bank</title>
+
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+</style>
+
+</head>
+
+<body class="container">
+
+<header class="text-center pb-5 my-4">
+<h1>Welcome to your <span class="text-primary"><strong>Bap Er Bank</strong></span>!!!</h1>
+</header>
+
+<main>
+<h3>Get Some Money...</h3>
+<section class="d-lg-flex justify-content-between my-4">
+<div class="text-bg-secondary pb-4 p-5 rounded">
+<h4>Deposit</h4>
+<p>$ <span id="depo">0.00</span></p>
+</div>
+<div class="text-bg-secondary pb-4 p-5 rounded">
+<h4>Withdraw</h4>
+<p>$ <span id="with">0.00</span></p>
+</div>
+<div class="text-bg-secondary pb-4 p-5 rounded">
+<h4>Balance</h4>
+<p>$ <span id="bala">0.00</span></p>
+</div>
+</section>
+<section class="d-lg-flex justify-content-around py-4 my-5">
+<div>
+<h4 class="text-lg-center">Please Deposit</h4>
+<input type="number" placeholder="$ deposit amount" class="" id="depo-b">
+<button onclick="deposit()" type="submit" class="">Deposit</button>
+</div>
+<div>
+<h4 class="text-lg-center">Please Withdraw</h4>
+<input type="number" placeholder="$ withdraw amount" class="" id="with-b">
+<button onclick="withdraw()" type="submit" class="">Withdraw</button>
+</div>
+</section>
+</main>
+
+<footer>
+</footer>
+
+<script>
+function deposit() {
+  document.getElementById("depo").innerHTML = document.getElementById("depo-b").value;
+  document.getElementById("bala").innerHTML = Number(document.getElementById("depo-b").value) + Number(document.getElementById("bala").innerHTML);
+  document.getElementById("depo-b").value = "";
+}
+function withdraw() {
+  document.getElementById("with").innerHTML = document.getElementById("with-b").value;
+  document.getElementById("bala").innerHTML = Number(document.getElementById("bala").innerHTML - Number(document.getElementById("with-b").value));
+  document.getElementById("with-b").value = "";
+}
+</script>
+
+</body>
+
+</html>

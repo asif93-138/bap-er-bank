@@ -29,26 +29,26 @@
 <main>
 <h3>Get Some Money...</h3>
 <section class="d-lg-flex justify-content-between my-4">
-<div class="text-bg-secondary pb-4 p-5 rounded">
+<div class="text-bg-secondary pb-4 p-5 my-4 rounded">
 <h4>Deposit</h4>
 <p>$ <span id="depo">0.00</span></p>
 </div>
-<div class="text-bg-secondary pb-4 p-5 rounded">
+<div class="text-bg-secondary pb-4 p-5 my-4 rounded">
 <h4>Withdraw</h4>
 <p>$ <span id="with">0.00</span></p>
 </div>
-<div class="text-bg-secondary pb-4 p-5 rounded">
+<div class="text-bg-secondary pb-4 p-5 my-4 rounded">
 <h4>Balance</h4>
 <p>$ <span id="bala">0.00</span></p>
 </div>
 </section>
 <section class="d-lg-flex justify-content-around py-4 my-5">
-<div>
+<div class="mb-4">
 <h4 class="text-lg-center">Please Deposit</h4>
 <input type="number" placeholder="$ deposit amount" class="" id="depo-b">
 <button onclick="deposit()" type="submit" class="">Deposit</button>
 </div>
-<div>
+<div class="mb-4">
 <h4 class="text-lg-center">Please Withdraw</h4>
 <input type="number" placeholder="$ withdraw amount" class="" id="with-b">
 <button onclick="withdraw()" type="submit" class="">Withdraw</button>
@@ -61,13 +61,13 @@
 
 <script>
 function deposit() {
-  document.getElementById("depo").innerHTML = document.getElementById("depo-b").value;
+  document.getElementById("depo").innerHTML = Number(document.getElementById("depo-b").value) + Number(document.getElementById("depo").innerHTML);
   document.getElementById("bala").innerHTML = Number(document.getElementById("depo-b").value) + Number(document.getElementById("bala").innerHTML);
   document.getElementById("depo-b").value = "";
 }
 function withdraw() {
-  document.getElementById("with").innerHTML = document.getElementById("with-b").value;
-  document.getElementById("bala").innerHTML = Number(document.getElementById("bala").innerHTML - Number(document.getElementById("with-b").value));
+  document.getElementById("with").innerHTML = Number(document.getElementById("with").innerHTML) + Number(document.getElementById("with-b").value);
+  document.getElementById("bala").innerHTML = Number(document.getElementById("bala").innerHTML) - Number(document.getElementById("with-b").value);
   document.getElementById("with-b").value = "";
 }
 </script>
